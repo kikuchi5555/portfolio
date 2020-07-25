@@ -1,0 +1,18 @@
+@import './style/foundations/reset';
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  @media screen and (max-width: 399px) {
+    font-size: 2vw;
+  }
+}
+
+body {
+  font-family: 'Roboto Mono', monospace, sans-serif;
+}
