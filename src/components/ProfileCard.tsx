@@ -9,8 +9,8 @@ function ProfileCard() {
         <Heading>kikuchi tetsuro</Heading>
         <SubHeading>front-end development <br />& design</SubHeading>
       </Header>
-      <Footer>
-        <Icon href="https://github.com/kikuchi5555" target="_blank">
+      <Footer href="https://github.com/kikuchi5555" target="_blank">
+        <Icon>
           <img src={GitHubIcon} alt="GitHub" />
           <p>kikuchi5555</p>
         </Icon>
@@ -20,19 +20,30 @@ function ProfileCard() {
 }
 
 const Card = styled.div`
+  position: relative;
   background: #282828;
   border-radius: .8rem;
   overflow: hidden;
+  width: 100%;
   max-width: 375px;
+  z-index: 10;
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
 `;
 
 const Header = styled.div`
-  padding: 2.4rem 3.2rem;
+  padding: 2.4rem 3.2rem 4.8rem;
 `;
 
-const Footer = styled.div`
+const Footer = styled.a`
+  display: block;
   background: #222;
   padding: 1.6rem 3.2rem;
+  transition: 300ms;  
+  @media screen and (min-width: 768px) {
+    &:hover {
+      opacity: .5;
+    }
+  }
 `;
 
 const Heading = styled.h1`
@@ -48,14 +59,10 @@ const SubHeading = styled.p`
   line-height: 2.4rem;
 `;
 
-const Icon = styled.a`
+const Icon = styled.span`
   display: inline-flex;
   align-items: center;
   text-decoration: none;
-  transition: 300ms;  
-  &:hover {
-    opacity: .8;
-  }
 
   img {
     width: 2.4rem;
